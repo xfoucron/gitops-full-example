@@ -2,7 +2,14 @@
 
 image:
   name: "gitops-backend"
-  tag: "v0.0.3"
+  tag: "v0.0.4"
+
+env:
+  - name: RAILS_MASTER_KEY
+    valueFrom:
+      secretKeyRef:
+        name: backend-secrets
+        key: railsMasterKey
 
 ingress:
   enabled: true
