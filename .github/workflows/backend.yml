@@ -111,4 +111,4 @@ jobs:
         with:
           context: "apps/backend"
           push: true
-          tags: xfoucron/gitops-backend:${{ github.ref_name }}
+          tags: ghcr.io/xfoucron/gitops-backend:${{ github.ref_name }}
