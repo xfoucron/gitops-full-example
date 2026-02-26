@@ -6,7 +6,7 @@ env:
   WORKING_DIR: apps/backend
 defaults:
   run:
-    working-directory: ${{ env.WORKING_DIR }}
+    working-directory: apps/backend
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
