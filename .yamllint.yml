@@ -4,6 +4,7 @@ extends: default
 
 ignore: |
   kubeconfig.y*ml
+  deploy/helm/templates/*.y*ml
 
 rules:
   line-length:
