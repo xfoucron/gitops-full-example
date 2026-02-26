@@ -12,4 +12,4 @@ jobs:
         run: pip install yamllint
 
       - name: Lint Yaml files
-        run: yamllint -c .
+        run: yamllint -c .yamllint.yml .
