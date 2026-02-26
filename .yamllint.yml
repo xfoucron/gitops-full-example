@@ -1,3 +1,11 @@
 ---
 
 extends: default
+
+ignore: |
+  kubeconfig.y*ml
+
+rules:
+  line-length:
+    ignore: |
+      .github/workflows/*.yml
