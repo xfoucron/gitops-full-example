@@ -7,6 +7,8 @@ env:
 defaults:
   run:
     working-directory: apps/backend
+permissions:
+  packages: write
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
