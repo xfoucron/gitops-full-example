@@ -2,9 +2,11 @@
 
 name: Backend
 on: push  # yamllint disable-line rule:truthy
+env:
+  WORKING_DIR: apps/backend
 defaults:
   run:
-    working-directory: apps/backend/
+    working-directory: ${{ env.WORKING_DIR }}
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
@@ -16,6 +18,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          working-directory: ${{ env.WORKING_DIR }}
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -35,6 +38,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          working-directory: ${{ env.WORKING_DIR }}
 
       - name: Prepare RuboCop cache
         uses: actions/cache@v4
@@ -71,6 +75,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          working-directory: ${{ env.WORKING_DIR }}
 
       - name: Run tests
         env:
