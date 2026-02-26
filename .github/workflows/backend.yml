@@ -109,6 +109,6 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: "apps/backend"
           push: true
           tags: xfoucron/gitops-backend:${{ github.ref_name }}
